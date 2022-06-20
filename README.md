@@ -6,6 +6,12 @@
     Event QR Code
 </h4>
 
+## 🚀 Tecnologias
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- [Python](https://www.python.org/)
+- [Django](https://www.djangoproject.com/)
+
 ## 💻 Projeto
 **Projeto para gerar QR Code e registrar participação em eventos. Ideal para usar com celular e ler QR Code. Salva informações dos eventos em que o partcipante esteve presente.**
 
