@@ -2,28 +2,41 @@
     <h2 align="center">Registre a presença do participante</h2>
 
     <form
-        method="POST"
         action="{% url 'submit_participant' participant_id=participant_id %}"
+        class="pt-3 row"
+        method="POST"
         style="
             height: 100%;
             max-width: 600px;
             margin: 0 auto 0;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
         "
     >
         {% csrf_token %}
 
         {% for field in form %}
-            <div class="col-sm-12 mb-3">
-                <label for="{{ field.id_for_label }}" class="form-label">{{ field.label }}</label>
+            <div class="mb-3">
+                <label
+                    for="{{ field.id_for_label }}"
+                    class="form-label"
+                >
+                    {{ field.label }}
+                </label>
+
                 {{ field }}
             </div>
         {% endfor %}
 
-        <button class="btn btn-lg btn-primary" type="submit">Enviar</button>
+        <div>
+            <button
+                class="btn btn-lg btn-primary w-100"
+                type="submit"
+            >
+                Enviar
+            </button>
+        </div>
 
-        <p class="text-center text-muted">© Arruda² – {% now "Y" %}</p>
+        <p class="text-center text-muted mt-3">
+            © Arruda² – {% now "Y" %}
+        </p>
     </form>
 </main>

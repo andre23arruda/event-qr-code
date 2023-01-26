@@ -9,7 +9,16 @@
 
 {% block other_scripts %}
     <script>
-        async function postApi(route, formData) {
+        function addParentNodeClass() {
+            const nodes = document.querySelectorAll('[data-parentclass]')
+            nodes.forEach(node => {
+                const parentClass = node.dataset.parentclass
+                node.parentElement.classList.add(parentClass)
+            })
+        }
+        addParentNodeClass()
+
+        async function postData(route, formData) {
             return fetch(
                 route,
                 {
@@ -33,13 +42,12 @@
             })
         }
 
-
         const form = document.querySelector('form')
         form.addEventListener('submit', function(event) {
             event.preventDefault()
             const route = form.action
             const formData = new FormData(form)
-            postApi(route, formData)
+            postData(route, formData)
             .then(response => {
                 console.log(response)
                 if (response.status === 200)
@@ -48,7 +56,8 @@
                     window.location.href = 'register_error'
             })
             .catch(error => {
-                console.log(error)
+                // console.log(error)
+                // alert(error)
                 window.history.go = ''
             })
         })

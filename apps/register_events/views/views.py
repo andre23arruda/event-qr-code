@@ -8,8 +8,8 @@ from register_events.utils import available_events
 
 
 @login_required(login_url='/admin/login/')
-def view_render_partipant(request):
-    '''TPágina com formulário de participação do evento'''
+def participant_form(request):
+    '''Página com formulário de participação do evento'''
     participant_id = request.GET.get('participant')
     participant = get_object_or_404(Participant, id=participant_id)
     # has_events = available_events()
@@ -28,28 +28,24 @@ def view_render_partipant(request):
 
 
 @login_required(login_url='/admin/login/')
-def view_submit_partipant(request, participant_id):
+def submit_partipant_form(request, participant_id):
     '''Submissão da participação'''
     participant = get_object_or_404(Participant, id=participant_id)
     event_id = request.POST.get('event')
     participant.events.add(Event.objects.get(id=event_id))
     participant.save()
-    return JsonResponse({'message' :'deu bom!!'})
+    return JsonResponse({'message': 'ok'})
 
 
 @login_required(login_url='/admin/login/')
 def view_register_success(request):
     '''Sucesso ao registrar participante'''
-    context = {
-        'page_title': 'Sucesso',
-    }
+    context = {'page_title': 'Sucesso'}
     return render(request, 'register_events/success.html', context)
 
 
 @login_required(login_url='/admin/login/')
 def view_register_error(request):
     '''Erro ao registrar participante'''
-    context = {
-        'page_title': 'Erro',
-    }
+    context = {'page_title': 'Erro'}
     return render(request, 'register_events/error.html', context)
