@@ -1,0 +1,80 @@
+[
+    {
+        "model": "register_events.event",
+        "pk": 1,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2022-06-04",
+            "name": "Event 1",
+            "description": "",
+            "date": "2022-06-10T11:16:09.184Z",
+            "how_long": 90,
+            "is_active": false
+        }
+    },
+    {
+        "model": "register_events.event",
+        "pk": 2,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2022-06-04",
+            "name": "Event 2",
+            "description": "",
+            "date": "2022-06-15T11:16:09.184Z",
+            "how_long": 90,
+            "is_active": false
+        }
+    },
+    {
+        "model": "register_events.event",
+        "pk": 3,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2022-06-04",
+            "name": "Event 3",
+            "description": "",
+            "date": "2022-06-20T11:16:09.184Z",
+            "how_long": 90,
+            "is_active": false
+        }
+    },
+    {
+        "model": "register_events.participant",
+        "pk": 1,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2023-01-26",
+            "name": "Participant 1",
+            "birth_date": "2003-01-25",
+            "email": "teste1@email.com",
+            "description": "",
+            "events": []
+        }
+    },
+    {
+        "model": "register_events.participant",
+        "pk": 2,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2022-06-04",
+            "name": "Participant 2",
+            "birth_date": "2003-01-25",
+            "email": "test2@email.com",
+            "description": "",
+            "events": []
+        }
+    },
+    {
+        "model": "register_events.participant",
+        "pk": 3,
+        "fields": {
+            "created_at": "2022-06-04",
+            "updated_at": "2022-06-04",
+            "name": "Participant 3",
+            "birth_date": "2003-01-25",
+            "email": "teste3@email.com",
+            "description": "",
+            "events": []
+        }
+    }
+]

@@ -14,11 +14,11 @@ class ParticipantForms(forms.ModelForm):
     )
     # event = forms.ModelChoiceField(
     #     queryset=Event.objects.filter(date__gte=datetime.now()),
-    #     widget=forms.Select(attrs={'class': 'form-control'})
+    #     widget=forms.Select(attrs={'class': 'form-select'})
     # )
     # event = forms.ModelChoiceField(
     #     queryset=available_events(),
-    #     widget=forms.Select(attrs={'class': 'form-control'})
+    #     widget=forms.Select(attrs={'class': 'form-select'})
     # )
 
     class Meta:

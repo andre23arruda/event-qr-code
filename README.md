@@ -48,10 +48,10 @@ python manage.py migrate
 # password -> teste1234
 
 # Carregar fixtures (exemplo para colocar no banco de dados)
-python manage.py loaddata events participants
+python manage.py loaddata data
 
 # Gerar qr codes
-python generate_codes.py
+python manage.py generate_codes
 
 # Start
 . run.sh

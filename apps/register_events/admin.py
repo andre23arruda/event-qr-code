@@ -11,7 +11,7 @@ english.DATETIME_FORMAT = 'H:i - d/m/Y'
 
 @admin.register(Event)
 class EventRegister(admin.ModelAdmin):
-    list_display = ['id', 'name', 'date', 'created_at', 'is_active']
+    list_display = ['id', 'name', 'date', 'is_active']
     list_display_links = ['id', 'name']
     list_editable = ['is_active']
     ordering = ['id']
@@ -21,10 +21,10 @@ class EventRegister(admin.ModelAdmin):
 @admin.register(Participant)
 class ParticipantRegister(admin.ModelAdmin):
     autocomplete_fields = ['events']
-    list_display = ['id', 'name', 'events_count', 'created_at']
+    list_display = ['id', 'name', 'email', 'birth_date', 'events_count']
     list_display_links = ['id', 'name']
     ordering = ['id']
-    search_fields = ['name',]
+    search_fields = ['name', 'email']
 
     def events_count(self, obj):
         return obj.events.all().count()
