@@ -20,6 +20,8 @@ class EventRegister(admin.ModelAdmin):
 
 @admin.register(Participant)
 class ParticipantRegister(admin.ModelAdmin):
+    change_form_template = 'register_events/admin_participant_changeform.html'
+
     autocomplete_fields = ['events']
     list_display = ['id', 'name', 'email', 'birth_date', 'events_count']
     list_display_links = ['id', 'name']

@@ -1,0 +1,21 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+
+    {% if original %}
+        <div class="submit-row">
+            <a
+                href="{% url 'see_qrcode' participant_id=original.pk %}"
+                class="button"
+                target="_blank"
+                style="padding: 10px 15px; max-height: 35px; display: inline-block;"
+            >
+                See QR Code
+            </a>
+        </div>
+    {% endif  %}
+
+
+
+{% endblock %}

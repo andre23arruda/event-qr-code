@@ -1,5 +1,5 @@
 body * {
-    transition: all 0.1s;
+    transition: background 0.1s;
 }
 
 .darkmode-toggle {
@@ -26,7 +26,7 @@ body * {
     background-color: #e2dddd44;
 }
 
-
+/*
 body.darkmode--activated {
     color: #e1e1e0;
     background-color: #242424;
@@ -289,4 +289,4 @@ body.darkmode--activated {
 
 .darkmode--activated #nav-sidebar .current-model {
     background-color: #696969 !important;
-}
+} */

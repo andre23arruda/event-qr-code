@@ -1,10 +1,11 @@
+import base64, io, urllib
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import HttpResponse, JsonResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib import messages
 from register_events.forms import ParticipantForms
 from register_events.models import Event, Participant
-from register_events.utils import available_events
+from register_events.utils import available_events, generate_participant_qrcode
 
 
 @login_required(login_url='/admin/login/')
@@ -28,7 +29,7 @@ def participant_form(request):
 
 
 @login_required(login_url='/admin/login/')
-def submit_partipant_form(request, participant_id):
+def submit_participant_form(request, participant_id):
     '''Submissão da participação'''
     participant = get_object_or_404(Participant, id=participant_id)
     event_id = request.POST.get('event')
@@ -38,14 +39,26 @@ def submit_partipant_form(request, participant_id):
 
 
 @login_required(login_url='/admin/login/')
-def view_register_success(request):
+def success_participant_form(request):
     '''Sucesso ao registrar participante'''
     context = {'page_title': 'Sucesso'}
     return render(request, 'register_events/success.html', context)
 
 
 @login_required(login_url='/admin/login/')
-def view_register_error(request):
+def error_participant_form(request):
     '''Erro ao registrar participante'''
     context = {'page_title': 'Erro'}
     return render(request, 'register_events/error.html', context)
+
+
+@login_required(login_url='/admin/login/')
+def see_qrcode(request, participant_id):
+    '''Exibe qr code do participante'''
+    img = generate_participant_qrcode(participant_id)
+    buf = io.BytesIO()
+    img.save(buf, 'PNG')
+    buf.seek(0)
+    string = base64.b64encode(buf.read())
+    uri =  urllib.parse.quote(string)
+    return HttpResponse(f'<img src="data:image/png;base64, { uri }" alt="QR Code do participante" />')

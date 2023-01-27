@@ -10,7 +10,7 @@ def get_ip_address():
     return ip_address
 
 def generate_codes():
-    '''Cria pokemons'''
+    '''Cria QR Code para cada participante'''
     site_url = f'http://{ get_ip_address() }:8000'
     # site_url = f'https://you-site-domain'
 

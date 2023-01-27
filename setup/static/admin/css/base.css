@@ -547,9 +547,9 @@ select[multiple] {
     min-width: 70%;
 }
 
-.form-row .related-widget-wrapper select:not(.filtered) {
+/* .form-row .related-widget-wrapper select:not(.filtered) {
     width: 85% !important;
-}
+} */
 .form-row .related-widget-wrapper .select2 {
     width: 96% !important;
     max-width: 700px;
