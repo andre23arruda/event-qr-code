@@ -1,79 +1,82 @@
 [
     {
         "model": "register_events.event",
-        "pk": 1,
+        "pk": "LNsE6fyH",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2022-06-04",
-            "name": "Event 1",
-            "description": "",
-            "date": "2022-06-10T11:16:09.184Z",
-            "how_long": 90,
-            "is_active": false
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "Curso de Python Avançado",
+            "taught_by": "Alan Turing",
+            "description": "Domine Python em 5 horas",
+            "date": "2023-07-28T21:00:00Z",
+            "how_long": 300,
+            "is_active": true
         }
     },
     {
         "model": "register_events.event",
-        "pk": 2,
+        "pk": "ZiHoX8oo",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2022-06-04",
-            "name": "Event 2",
-            "description": "",
-            "date": "2022-06-15T11:16:09.184Z",
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "Curso de Django Básico",
+            "taught_by": "Grace Hopper",
+            "description": "Aprenda o básico de Django em pouco tempo",
+            "date": "2023-05-28T21:00:00Z",
             "how_long": 90,
-            "is_active": false
+            "is_active": true
         }
     },
     {
         "model": "register_events.event",
-        "pk": 3,
+        "pk": "bFKbMWWx",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2022-06-04",
-            "name": "Event 3",
-            "description": "",
-            "date": "2022-06-20T11:16:09.184Z",
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "Curso de Python Básico",
+            "taught_by": "Ada Lovelace",
+            "description": "Aprenda o básico de Python de forma divertida.",
+            "date": "2023-03-28T21:00:00Z",
             "how_long": 90,
-            "is_active": false
+            "is_active": true
         }
     },
     {
         "model": "register_events.participant",
-        "pk": 1,
+        "pk": "TpkRXgee",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2023-01-26",
-            "name": "Participant 1",
-            "birth_date": "2003-01-25",
-            "email": "teste1@email.com",
-            "description": "",
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "John Doe",
+            "birth_date": "1990-01-28",
+            "email": "iuiooioiiii@gmail.com",
+            "description": "Estudante de Engenharia",
             "events": []
         }
     },
     {
         "model": "register_events.participant",
-        "pk": 2,
+        "pk": "Za7HePmb",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2022-06-04",
-            "name": "Participant 2",
-            "birth_date": "2003-01-25",
-            "email": "test2@email.com",
-            "description": "",
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "Sophia Powell",
+            "birth_date": "1998-09-25",
+            "email": "jelifit@mailinator.com",
+            "description": "Programadora",
             "events": []
         }
     },
     {
         "model": "register_events.participant",
-        "pk": 3,
+        "pk": "k7G2HD4t",
         "fields": {
-            "created_at": "2022-06-04",
-            "updated_at": "2022-06-04",
-            "name": "Participant 3",
-            "birth_date": "2003-01-25",
-            "email": "teste3@email.com",
-            "description": "",
+            "created_at": "2023-01-28",
+            "updated_at": "2023-01-28",
+            "name": "Marcia Fleming",
+            "birth_date": "1992-01-20",
+            "email": "tixarisim@mailinator.com",
+            "description": "Estudante de Medicina",
             "events": []
         }
     }

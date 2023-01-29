@@ -11,11 +11,16 @@ english.DATETIME_FORMAT = 'H:i - d/m/Y'
 
 @admin.register(Event)
 class EventRegister(admin.ModelAdmin):
-    list_display = ['id', 'name', 'date', 'is_active']
+    list_display = ['id', 'name', 'date', 'is_active', 'participants_count']
     list_display_links = ['id', 'name']
     list_editable = ['is_active']
     ordering = ['id']
+    readonly_fields = ['id']
     search_fields = ['name',]
+
+    def participants_count(self, obj):
+        return obj.event_participants.count()
+    participants_count.short_description = 'Participants'
 
 
 @admin.register(Participant)
@@ -26,6 +31,7 @@ class ParticipantRegister(admin.ModelAdmin):
     list_display = ['id', 'name', 'email', 'birth_date', 'events_count']
     list_display_links = ['id', 'name']
     ordering = ['id']
+    readonly_fields = ['id']
     search_fields = ['name', 'email']
 
     def events_count(self, obj):

@@ -13,7 +13,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [Django](https://www.djangoproject.com/)
 
 ## 💻 Projeto
-**Projeto para gerar QR Code e registrar participação em eventos. Ideal para usar com celular e ler QR Code. Salva informações dos eventos em que o partcipante esteve presente.**
+**Projeto para gerar QR Code de participantes e registrar participação em eventos. Ideal para usar com celular e ler QR Code. Salva informações dos eventos em que o participante esteve presente.**
 
 
 ### Run
@@ -44,8 +44,8 @@ python manage.py migrate
 
 # Criar superusuário (poderá fazer login e entrar no admin)
 . create_su.sh
-# username -> teste
-# password -> teste1234
+# username -> dev
+# password -> 123
 
 # Carregar fixtures (exemplo para colocar no banco de dados)
 python manage.py loaddata data
