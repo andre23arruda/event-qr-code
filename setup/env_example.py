@@ -19,3 +19,13 @@ os.environ['LANGUAGE_CODE'] = 'pt-br'
 os.environ['TIME_ZONE'] = 'America/Sao_Paulo'
 os.environ['AUTHOR'] = 'your-name'
 os.environ['USE_SQLITE'] = 'True' # if '' is False, else is True
+
+os.environ['EMAIL_HOST'] = 'EMAIL_HOST'
+os.environ['EMAIL_HOST_USER'] = 'EMAIL_HOST_USER'
+os.environ['EMAIL_HOST_PASSWORD'] = 'EMAIL_HOST_PASSWORD'
+os.environ['EMAIL_PORT'] = 'EMAIL_PORT'
+
+os.environ['EMAIL_BACKEND'] = 'EMAIL_BACKEND'
+os.environ['GMAIL_HOST'] = 'GMAIL_HOST'
+os.environ['GMAIL_HOST_USER'] = 'GMAIL_HOST_USER'
+os.environ['GMAIL_HOST_PASSWORD'] = 'GMAIL_HOST_PASSWORD'

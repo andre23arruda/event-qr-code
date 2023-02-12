@@ -14,6 +14,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 **Projeto para gerar QR Code de participantes e registrar participação em eventos. Ideal para usar com celular e ler QR Code. Salva informações dos eventos em que o participante esteve presente.**
+<div align="center">
+    <img alt="Models" title="Models" src="doc/models.png" width="300px" />
+</div>
+<p align="center">Models</p>
+<hr>
 
 
 ### Run

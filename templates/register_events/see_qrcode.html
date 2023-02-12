@@ -1,0 +1,22 @@
+{% extends '../partials/__base.html' %}
+{% load static %}
+
+{% block page_title %} {{ page_title }} {% endblock page_title %}
+
+{% block content %}
+    <main style="
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        background-color: #cecece;
+        font-size: 4rem;"
+    >
+        <h3>{{ participant.name }} - {{ participant.email }}</h3>
+        <br />
+        <img src="data:image/png;base64, {{ img_b64 }}" alt="QR Code do participante" />
+    </main>
+{% endblock content %}

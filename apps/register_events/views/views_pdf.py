@@ -50,12 +50,8 @@ def base_template(ID, canvas, doc):
     canvas.restoreState()
 
 
-def see_pdf(request, event_id, participant_id):
-    participant = Participant.objects.get(pk=participant_id)
-    event = get_object_or_404(Event, pk=event_id)
-    if event not in participant.events.all():
-        raise BadRequest('Bad request!')
-
+def create_pdf(event: Event, participant: Participant):
+    '''Monta PDF e retorna buffer'''
     buffer = io.BytesIO()
     doc = BaseDocTemplate(
         buffer,
@@ -65,12 +61,11 @@ def see_pdf(request, event_id, participant_id):
         rightMargin=rightMargin,
         topMargin=topMargin*2.5,
     )
-
     frame = Frame(leftMargin, bottomMargin, doc.width, doc.height, id='normal')
     template_header = PageTemplate(
         id='base_template',
         frames=frame,
-        onPage=partial(base_template, f'{ event_id } - { participant_id }'),
+        onPage=partial(base_template, f'{ event.id } - { participant.id }'),
     )
     doc.addPageTemplates([template_header])
     Story = []
@@ -99,4 +94,13 @@ def see_pdf(request, event_id, participant_id):
 
     doc.build(Story)
     buffer.seek(0)
+    return buffer
+
+
+def see_pdf(request, event_id, participant_id):
+    participant = Participant.objects.get(pk=participant_id)
+    event = get_object_or_404(Event, pk=event_id)
+    if event not in participant.events.all():
+        raise BadRequest('Bad request!')
+    buffer = create_pdf(event, participant)
     return HttpResponse(buffer, content_type='application/pdf')

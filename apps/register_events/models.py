@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
 from shortuuid.django_fields import ShortUUIDField
 
@@ -38,3 +39,10 @@ class Participant(models.Model):
 
     def __str__(self):
         return f'{ self.name }'
+
+    def qr_code(self):
+        return mark_safe('''
+			<a href="/register_events/see_qrcode/%s" target="_blank">
+                See
+			</a>''' % self.id
+		)
